@@ -1,0 +1,128 @@
+
+.weather-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    width: 90%;
+    max-width: 300px;
+    font-size: 14px;
+    margin: 10px;
+}
+
+.weather-card header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+.weather-card .location {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.weather-card .region, .weather-card .country {
+    font-size: 14px;
+}
+
+.weather-card .current {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+
+.weather-card .current img {
+    width: 64px;
+    height: 64px;
+    margin-right: 15px;
+}
+
+.weather-card .details {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.weather-card .detail-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.weather-card .report-button {
+    text-align: center;
+    padding: 15px;
+}
+
+.weather-card .report-button button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.weather-card .report-button button:hover {
+    background-color: #45a049;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .weather-card {
+        width: 80%;
+        max-width: 500px;
+    }
+
+    .weather-card .current img {
+        width: 48px;
+        height: 48px;
+    }
+
+    .weather-card .details {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .weather-card {
+        width: 95%;
+        max-width: none;
+    }
+
+    .weather-card header {
+        padding: 10px;
+    }
+
+    .weather-card .location {
+        font-size: 16px;
+    }
+
+    .weather-card .region, .weather-card .country {
+        font-size: 12px;
+    }
+
+    .weather-card .current {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .weather-card .current img {
+        margin-bottom: 10px;
+    }
+
+    .weather-card .details {
+        font-size: 12px;
+    }
+
+    .weather-card .report-button {
+        padding: 10px;
+    }
+
+    .weather-card .report-button button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}

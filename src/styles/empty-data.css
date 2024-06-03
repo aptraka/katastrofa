@@ -1,0 +1,13 @@
+.empty-data {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+  }
+  
+  .empty-data p {
+    font-size: 1.2em;
+    color: #333;
+    margin: 0; /* Remove default margin */
+  }
+  
