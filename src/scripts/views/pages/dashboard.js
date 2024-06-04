@@ -1,64 +1,73 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import Swal from 'sweetalert2';
 import DisasterDBSource from '../../data/data-source';
-import { badConnection, createRestoItemTemplate } from '../templates/template-creator';
+import { badConnection} from '../templates/template-creator';
 
 const Dashboard = {
   async render() {
     return `
-    <div class="weather-card">
-        <header>
-            <div class="location">Semarang</div>
-            <div class="region">Central Java</div>
-            <div class="country">Indonesia</div>
-        </header>
-        <div class="current">
-            <img src="//cdn.weatherapi.com/weather/64x64/day/263.png" alt="Weather Icon">
-            <div class="details">
-                <div class="detail-item">
-                    <span>Temperature:</span>
-                    <span>27.8°C</span>
-                </div>
-                <div class="detail-item">
-                    <span>Condition:</span>
-                    <span>Patchy light drizzle</span>
-                </div>
-                <div class="detail-item">
-                    <span>Humidity:</span>
-                    <span>70%</span>
-                </div>
-                <div class="detail-item">
-                    <span>Wind:</span>
-                    <span>7.6 kph SSE</span>
-                </div>
-                <div class="detail-item">
-                    <span>Feels Like:</span>
-                    <span>30.6°C</span>
-                </div>
-                <div class="detail-item">
-                    <span>Visibility:</span>
-                    <span>5 km</span>
-                </div>
-                <div class="detail-item">
-                    <span>Pressure:</span>
-                    <span>1012.0 mb</span>
-                </div>
-                <div class="detail-item">
-                    <span>UV Index:</span>
-                    <span>7</span>
-                </div>
+    <div id="offline"> </div>
+    <div class="weather-card" id="weather-card">
+    <header>
+        <div class="location" id="location"></div>
+        <div class="region" id="region"></div>
+        <div class="country" id="country"></div>
+    </header>
+    <div class="current">
+        <img src="" alt="Weather Icon" id="weather-icon">
+        <div class="details" id="weather-details">
+            <div class="detail-item">
+                <span>Temperature:</span>
+                <span id="temperature"></span>
+            </div>
+            <div class="detail-item">
+                <span>Condition:</span>
+                <span id="condition"></span>
+            </div>
+            <div class="detail-item">
+                <span>Humidity:</span>
+                <span id="humidity"></span>
+            </div>
+            <div class="detail-item">
+                <span>Wind:</span>
+                <span id="wind"></span>
+            </div>
+            <div class="detail-item">
+                <span>Feels Like:</span>
+                <span id="feels-like"></span>
+            </div>
+            <div class="detail-item">
+                <span>Visibility:</span>
+                <span id="visibility"></span>
+            </div>
+            <div class="detail-item">
+                <span>Pressure:</span>
+                <span id="pressure"></span>
+            </div>
+            <div class="detail-item">
+                <span>UV Index:</span>
+                <span id="uv-index"></span>
             </div>
         </div>
-        <div class="report-button">
-            <button>Laporan</button>
-        </div>
     </div>
+</div>
     `;
   },
 
   async afterRender() {
-    const city = document.querySelector('#city');
-    const temperature = document.querySelector('#temperature');
+    const offlineContainer = document.querySelector('#offline');
+    const locationElement = document.getElementById('location');
+    const regionElement = document.getElementById('region');
+    const countryElement = document.getElementById('country');
+    const weatherIconElement = document.getElementById('weather-icon');
+    const temperatureElement = document.getElementById('temperature');
+    const conditionElement = document.getElementById('condition');
+    const humidityElement = document.getElementById('humidity');
+    const windElement = document.getElementById('wind');
+    const feelsLikeElement = document.getElementById('feels-like');
+    const visibilityElement = document.getElementById('visibility');
+    const pressureElement = document.getElementById('pressure');
+    const uvIndexElement = document.getElementById('uv-index');
     try {
       Swal.fire({
         title: 'Get All Data...',
@@ -69,7 +78,18 @@ const Dashboard = {
         },
       });
       const weather = await DisasterDBSource.getWeather();
-      console.log(weather);
+      locationElement.innerText=weather.location.name;
+      regionElement.innerText = weather.location.region;
+      countryElement.innerText = weather.location.country;
+      weatherIconElement.src = weather.current.condition.icon;
+      temperatureElement.innerText = weather.current.temp_c+' °C';
+      conditionElement.innerText = weather.current.condition.text;
+      humidityElement.innerText = weather.current.humidity+' %';
+      windElement.innerText = weather.current.wind_kph+' km/h';
+      feelsLikeElement.innerText = weather.current.feelslike_c+' °C';
+      visibilityElement.innerText = weather.current.vis_km+' km';
+      pressureElement.innerText = weather.current.pressure_mb+' mb';
+      uvIndexElement.innerText = weather.current.uv+'';
       Swal.close();
     } catch (error) {
       Swal.fire({

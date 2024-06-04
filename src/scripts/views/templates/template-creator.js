@@ -18,3 +18,21 @@ const createDisasterDetailTemplate = (detail) => `
   </div>
 </div>
 `;
+
+const badConnection = () => `
+<div class="bad-connection" id="badConnection">
+  <p>Error, Refresh Page It looks like there might be a bad connection.</p>
+</div>`;
+
+const emptyData = () => `
+<div class="empty-data" id="emptyData">
+  <p>Data is empty.</p>
+</div>
+`;
+
+
+export {
+    createDisasterDetailTemplate,
+    badConnection,
+    emptyData
+};
