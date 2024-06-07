@@ -1,19 +1,20 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import Swal from 'sweetalert2';
 import DisasterDBSource from '../../data/data-source';
-import { badConnection} from '../templates/template-creator';
+import { badConnection } from '../templates/template-creator';
 
 const Dashboard = {
   async render() {
     return `
     <div id="offline"> </div>
+    <div class="mid_content">
     <div class="weather-card" id="weather-card">
-    <header>
-        <div class="location" id="location"></div>
-        <div class="region" id="region"></div>
-        <div class="country" id="country"></div>
-    </header>
-    <div class="current">
+        <header>
+          <div class="location" id="location"></div>
+          <div class="region" id="region"></div>
+          <div class="country" id="country"></div>
+      </header>
+      <div class="current">
         <img src="" alt="Weather Icon" id="weather-icon">
         <div class="details" id="weather-details">
             <div class="detail-item">
@@ -47,10 +48,34 @@ const Dashboard = {
             <div class="detail-item">
                 <span>UV Index:</span>
                 <span id="uv-index"></span>
+                </div>
             </div>
+          </div>
+          </div>
+    
+          <div class="education_one">
+            <h1>Kapan Banjir Terburuk di Jakarta Terjadi?</h1>
+            <p>Banjir terparah yang melanda Jakarta terjadi pada bulan Januari 2020. Banjir ini menyebabkan lebih dari 60 ribu warga mengungsi dan menelan korban jiwa sekitar 66 orang. Genangan air mencapai ketinggian hingga 2-3 meter di beberapa daerah, memutus akses ke berbagai layanan dasar dan mengakibatkan kerugian ekonomi yang signifikan.</p>
         </div>
+      </div>
     </div>
-</div>
+    <div class="education_content">
+    <div class="main_education">
+        <h1>Mengapa Kota Jakarta Sering Terjadi Banjir?</h1>
+        <p>Banjir terparah yang melanda Jakarta terjadi pada bulan Januari 2020. Banjir ini menyebabkan lebih dari 60 ribu warga mengungsi dan menelan korban jiwa sekitar 66 orang. Genangan air mencapai ketinggian hingga 2-3 meter di beberapa daerah, memutus akses ke berbagai layanan dasar dan mengakibatkan kerugian ekonomi yang signifikan.</p>
+        <a href="../scripts/education.html">Education</a>
+    </div>
+    <div class="separator">
+    <div class="indicator_info">
+        <h1>Faktor Penyebab Banjir</h1>
+        <h2>di Wilayah Jakarta</h2>
+        <p>Banjir di Jakarta disebabkan oleh berbagai faktor seperti curah hujan tinggi yang melebihi kapasitas drainase, tata ruang kota yang tidak teratur, dan berkurangnya daerah resapan air akibat pembangunan yang tidak terencana. Selain itu, sampah yang menyumbat saluran air memperparah kondisi, dan letak geografis Jakarta yang berada di dataran rendah serta dekat dengan laut membuatnya rentan terhadap banjir pasang surut.</p>
+    </div>
+    <div class="last_content">
+        <h1>Bagikan Informasi Terkini Mengenai Titik Banjir Jakarta pada Forum Diskusi</h1>
+        <a href="../scripts/forum.html">Forum</a>
+    </div>
+    </div>
     `;
   },
 
@@ -78,18 +103,18 @@ const Dashboard = {
         },
       });
       const weather = await DisasterDBSource.getWeather();
-      locationElement.innerText=weather.location.name;
+      locationElement.innerText = weather.location.name;
       regionElement.innerText = weather.location.region;
       countryElement.innerText = weather.location.country;
       weatherIconElement.src = weather.current.condition.icon;
-      temperatureElement.innerText = weather.current.temp_c+' °C';
+      temperatureElement.innerText = weather.current.temp_c + ' °C';
       conditionElement.innerText = weather.current.condition.text;
-      humidityElement.innerText = weather.current.humidity+' %';
-      windElement.innerText = weather.current.wind_kph+' km/h';
-      feelsLikeElement.innerText = weather.current.feelslike_c+' °C';
-      visibilityElement.innerText = weather.current.vis_km+' km';
-      pressureElement.innerText = weather.current.pressure_mb+' mb';
-      uvIndexElement.innerText = weather.current.uv+'';
+      humidityElement.innerText = weather.current.humidity + ' %';
+      windElement.innerText = weather.current.wind_kph + ' km/h';
+      feelsLikeElement.innerText = weather.current.feelslike_c + ' °C';
+      visibilityElement.innerText = weather.current.vis_km + ' km';
+      pressureElement.innerText = weather.current.pressure_mb + ' mb';
+      uvIndexElement.innerText = weather.current.uv + '';
       Swal.close();
     } catch (error) {
       Swal.fire({

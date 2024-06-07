@@ -1,13 +1,13 @@
 import Dashboard from '../views/pages/dashboard';
-// import AddReport from '../views/pages/add-report';
+import News from '../views/pages/news';
+import Report from '../views/pages/report';
 // import DetailReport from '../views/pages/detail-report';
-// import NewsList from '../views/pages/news-list';
 
 const routes = {
   '/': Dashboard,
   '/home': Dashboard,
-  // '/report': AddReport,
-  // '/news': NewsList,
+  '/news': News,
+  '/report': Report,
   // '/detail/:id': DetailReport,
 };
 

@@ -1,0 +1,611 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Quicksand", sans-serif;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+header.navbar-container {
+    width: 100%;
+    height: 10%;
+    padding-block: 1rem;
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 9999;
+    background-color: #1c2d3c;
+}
+
+header.navbar-container .logo img {
+    width: 150px;
+}
+
+header.navbar-container .nav-list ul {
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem 1rem;
+}
+
+header.navbar-container .nav-list li {
+    list-style-type: none;
+}
+
+header.navbar-container .nav-list li a {
+    padding: 0.5rem 1.5rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: white;
+    transition: all 0.2s ease-in-out;
+}
+
+header.navbar-container .nav-list li:hover a {
+    background-color: #567494;
+    color: white;
+}
+main{
+    margin: 1rem;
+}
+
+.info_one {
+    background-color: #eaf2f9;
+    padding: 2rem;
+    text-align: justify;
+    border-radius: 2.3rem;
+    margin-top: 1.1rem;
+    border-radius: 10px; 
+}
+
+.information{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+}
+.info_two {
+    grid-row: auto; /* Mengatur ulang posisi grid */
+    display: grid;
+    background-color: #eaf2f9;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 2.3rem;
+    margin-right: 1rem;
+    margin-top: 1rem;
+    grid-row: 1 / span 2;
+    border-radius: 10px; 
+    
+}
+
+.info_two img {
+    width: 100%;
+}
+
+.info_two h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+}
+
+.info_two h1 {
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+}
+
+.info_one h1,
+.info_two h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+    line-height: 3rem;
+}
+
+.info_two p{
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    line-height: 2.5rem;
+}
+
+.info_one p,
+.info_two p{
+    font-size: 1.5rem;
+    line-height: 2.1rem;
+}
+
+.info_two h1,
+.info_two {
+    text-align: center;
+    line-height: 4rem;
+}
+
+.news_item {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 1.5rem;
+    background-color: #eaf2f9;
+    border-radius: 10px; 
+}
+
+.news_item .header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem; 
+}
+
+.news_item .header img {
+    width: 50px; 
+    height: 50px; 
+    margin-right: 1rem; 
+}
+
+.news_item .header_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.2rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.news_item h1 {
+    font-size: 2rem;
+    margin-bottom: 0rem;
+    margin-top: 0rem;
+}
+
+.news_item a {
+    text-decoration: none;
+    color: #254014;
+    line-height: 2rem;
+    margin-bottom: 0;
+    margin-top: 0;
+    line-height: 2.5rem;
+}
+
+.news_item p {
+    font-size: 1.5rem;
+    margin-bottom: 0rem;
+    line-height: 2rem;
+    margin-top: 0;
+    line-height: 2.5rem;
+}
+
+footer {
+    margin-top: 3rem;
+    text-align: center;
+    background-color: #1c2d3c;
+}
+footer img {
+    max-width: 200px; 
+    max-height: 100px;
+
+}
+
+@media screen and (max-width: 500px) {
+    html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        overflow-x: hidden; /* Mencegah scroll horizontal */
+    }
+
+    header.navbar-container {
+        flex-direction: column;
+        height: auto;
+        justify-content: center; /* Center vertically */
+        align-items: center; /* Center horizontally */
+        width: 100%;
+        padding: 0.5rem;
+    }
+    .nav-list ul {
+        padding: 0;
+        text-align: center;
+        width: 100%; /* Pastikan menggunakan full width */
+    }
+    .nav-list li {
+        display: block;
+        margin: 10px 0;
+        width: 100%; /* Full width */
+    }
+    
+    header.navbar-container .logo {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+    
+    header.navbar-container .logo img {
+        width: 180px;
+        margin: 0 auto; /* Center the logo horizontally */
+    }
+    
+    header.navbar-container .nav-list ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center the navigation items horizontally */
+        gap: 0.5rem;
+    }
+    
+    main {
+        grid-template-columns: 1fr; /* Satu kolom pada layar kecil */
+    }
+
+    .info_one {
+        grid-column: 1; /* Menggunakan satu kolom */
+    }
+
+    .info_one h1{
+        font-size: 2.3rem;
+        line-height: 2.5rem;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    .info_one p{
+        font-size: 1.2rem;
+        line-height: 2rem;
+        text-align: center;
+    }
+
+    .info_two {
+        grid-row: auto; /* Kembali ke pengaturan default */
+        margin-right: 0; /* Hilangkan margin kanan */
+    }
+
+    .info_two h1{
+        font-size: 2.3rem;
+        line-height: 3.2rem;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .info_two h2{
+        font-size: 1.5rem;
+        line-height: 2rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .info_two p{
+        font-size: 1.2rem;
+        line-height: 2rem;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .info_two img{
+        width: 100%;
+    }
+
+    #news_container {
+        grid-row: auto; /* Kembali ke pengaturan default */
+    }
+
+    .news_item .header_text p{
+        font-size: 1.1rem;
+        margin-top: 0;
+        margin-bottom: 0;
+        line-height: 1.4rem;
+        text-align: left;
+    }
+
+    .news_item h1{
+        font-size: 1.5rem;
+        margin-top: 0;
+        margin-bottom: 0;
+        line-height: 1rem;
+        margin-top: 0;
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    .news_item p{
+        font-size: 1.2rem;
+        margin-top: 0;
+        margin-bottom: 0;
+        text-align: center;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .information{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .info_one h1{
+        font-size:2.3rem ;
+        line-height: 2.5rem;
+        margin-top: 0;
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    .info_one p{
+        text-align: center;
+        font-size: 1.2rem;
+        line-height: 2rem;
+    }
+
+    .info_two {
+        grid-row: auto; /* Kembali ke pengaturan default */
+        margin-right: 0; /* Hilangkan margin kanan */
+    }
+
+    .info_two h1{
+        font-size: 2.3rem;
+        line-height: 3.2rem;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .info_two h2{
+        font-size: 1.5rem;
+        line-height: 2rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .info_two p{
+        font-size: 1.2rem;
+        line-height: 2rem;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .info_two img{
+        width: 100%;
+    }
+
+    #news_container {
+        grid-row: auto; /* Kembali ke pengaturan default */
+    }
+
+    .news_item .header_text p{
+        font-size: 1.1rem;
+        margin-top: 0;
+        margin-bottom: 0;
+        line-height: 1.4rem;
+        text-align: left;
+    }
+
+    .news_item h1{
+        font-size: 1.5rem;
+        margin-top: 0;
+        margin-bottom: 0;
+        line-height: 1rem;
+        margin-top: 0;
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    .news_item p{
+        font-size: 1.2rem;
+        margin-top: 0;
+        margin-bottom: 0;
+        text-align: center;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .information{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .info_one h1{
+        font-size:2.5rem ;
+        line-height: 2.5rem;
+        margin-top: 0;
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    .info_one p{
+        text-align: center;
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+
+    .info_two {
+        grid-row: auto; /* Kembali ke pengaturan default */
+        margin-right: 0; /* Hilangkan margin kanan */
+    }
+
+    .info_two h1{
+        font-size: 2.5rem;
+        line-height: 3.2rem;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .info_two h2{
+        font-size: 1.9rem;
+        line-height: 2rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .info_two p{
+        font-size: 1.5rem;
+        line-height: 2rem;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .info_two img{
+        width: 100%;
+    }
+
+    #news_container {
+        grid-row: auto; /* Kembali ke pengaturan default */
+    }
+
+    .news_item .header_text p{
+        font-size: 1.5rem;
+        margin-top: 0;
+        margin-bottom: 0;
+        line-height: 1.5rem;
+        text-align: left;
+    }
+
+    .news_item h1{
+        font-size: 1.9rem;
+        margin-top: 0;
+        margin-bottom: 0;
+        line-height: 2rem;
+        margin-top: 0;
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    .news_item p{
+        font-size: 1.5rem;
+        margin-top: 0;
+        margin-bottom: 0;
+        text-align: center;
+        line-height: 2rem;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .info_one {
+        background-color: #eaf2f9;
+        padding: 2rem;
+        text-align: justify;
+        border-radius: 2.3rem;
+        margin-top: 1.1rem;
+        border-radius: 10px; 
+    }
+    
+    .information{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1rem;
+    }
+    .info_two {
+        grid-row: auto; /* Mengatur ulang posisi grid */
+        display: grid;
+        background-color: #eaf2f9;
+        padding: 2rem;
+        text-align: center;
+        border-radius: 2.3rem;
+        margin-right: 1rem;
+        margin-top: 1rem;
+        grid-row: 1 / span 2;
+        border-radius: 10px; 
+        
+    }
+    
+    .info_two img {
+        width: 100%;
+    }
+    
+    .info_two h2 {
+        font-size: 2rem;
+        font-weight: 600;
+        text-align: center;
+        margin-top: 0rem;
+        margin-bottom: 0rem;
+    }
+    
+    .info_two h1 {
+        margin-top: 0rem;
+        margin-bottom: 0rem;
+    }
+    
+    .info_one h1,
+    .info_two h1 {
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+        margin-top: 1.5rem;
+        line-height: 3rem;
+    }
+    
+    .info_two p{
+        margin-top: 0rem;
+        margin-bottom: 0rem;
+        line-height: 2.5rem;
+    }
+    
+    .info_one p,
+    .info_two p{
+        font-size: 1.5rem;
+        line-height: 2.1rem;
+    }
+    
+    .info_two h1,
+    .info_two {
+        text-align: center;
+        line-height: 4rem;
+    }
+    
+    .news_item {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        margin-top: 20px;
+        padding: 1.5rem;
+        background-color: #eaf2f9;
+        border-radius: 10px; 
+    }
+    
+    .news_item .header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem; 
+    }
+    
+    .news_item .header img {
+        width: 50px; 
+        height: 50px; 
+        margin-right: 1rem; 
+    }
+    
+    .news_item .header_text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        line-height: 1.2rem;
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 0;
+    }
+    
+    .news_item h1 {
+        font-size: 2rem;
+        margin-bottom: 0rem;
+        margin-top: 0rem;
+    }
+    
+    .news_item a {
+        text-decoration: none;
+        color: #254014;
+        line-height: 2rem;
+        margin-bottom: 0;
+        margin-top: 0;
+        line-height: 2.5rem;
+    }
+    
+    .news_item p {
+        font-size: 1.5rem;
+        margin-bottom: 0rem;
+        line-height: 2rem;
+        margin-top: 0;
+        line-height: 2.5rem;
+    }
+}
+

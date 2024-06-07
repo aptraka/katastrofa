@@ -5,9 +5,11 @@
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     overflow: hidden;
     width: 90%;
-    max-width: 300px;
+    max-width: 600px;
     font-size: 14px;
     margin: 10px;
+    align-items: center;
+    margin-left: 3rem;
 }
 
 .weather-card header {
@@ -33,8 +35,8 @@
 }
 
 .weather-card .current img {
-    width: 64px;
-    height: 64px;
+    width: 75px;
+    height: 75px;
     margin-right: 15px;
 }
 
@@ -42,6 +44,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    font-size: 1.2rem;
 }
 
 .weather-card .detail-item {

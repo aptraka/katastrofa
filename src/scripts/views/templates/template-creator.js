@@ -30,9 +30,27 @@ const emptyData = () => `
 </div>
 `;
 
+const popupForm = () => `
+<div id="popupForm" class="popup-form">
+            <div class="popup-content">
+                <span class="close-button" id="closeFormButton">&times;</span>
+                <h2>Buat pertanyaan baru</h2>
+                <form id="questionForm">
+                    <label for="userName">Deskripsi Pertanyaan</label>
+                    <input type="text" id="userName" name="userName" placeholder="Silahkan tulis judul pertanyaan..." required>
+                    <label for="content">Judul Pertanyaan</label>
+                    <textarea id="content" name="content" placeholder="Ketik sesuatu disini..." required></textarea>
+                    <button type="submit">Buat Pertanyaan</button>
+                </form>
+            </div>
+        </div>
+`;
+
 
 export {
     createDisasterDetailTemplate,
     badConnection,
-    emptyData
+    emptyData,
+    popupForm
 };
+
