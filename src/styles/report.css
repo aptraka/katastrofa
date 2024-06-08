@@ -1,0 +1,515 @@
+*,
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.search-content {
+    align-items: center;
+    justify-content: center; /* Center the form horizontally */
+    width: 100%; /* Full width container */
+    padding: 10px; /* Optional padding for spacing */
+}
+
+.search-container {
+    display: flex;
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin-left: 0.7rem;
+    font-size: 1.5rem;
+}
+
+.search-content i {
+    position: absolute;
+    left: 10px; /* Adjust the position of the icon */
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+}
+
+.search-content input {
+    width: 100%;
+    padding: 8px 12px;
+    padding-left: 40px; /* Adjust for the icon */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensures padding is included in the element's total width and height */
+    font-size: 1.2rem;
+}
+
+.first-content {
+    text-align: center;
+    align-items: center;
+    padding: 1.5rem;
+}
+
+.first-content {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.first-content h1 {
+    display: flex;
+    color: #1C2D3C;
+    font-size: 3rem;
+    text-align: center;
+    align-items: center;
+    margin-left: 8rem;
+    margin-top: 1.5rem;
+}
+
+.first-content h2 {
+    color: #53CB8E;
+    font-size: 3rem;
+    margin-bottom: 0;
+}
+
+.aside {
+    margin-top: 10px;
+    width: 30%; /* Adjust width as needed */
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.aside .button-content {
+    margin-bottom: 20px;
+    background-color: #2447F9;
+    padding: 5%;
+    border: 2px solid transparent;
+    border-radius: 999px;
+    cursor: pointer;
+    inline-size: 19rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    transition: all 0.15s ease-in;
+    margin-left: 3rem;
+    font-size: 1.3rem;
+}
+
+.button-content a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.filter-content {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    align-items: center;
+    margin-left: 3rem;
+    max-width: 90%;
+}
+
+.filter-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.filter-content li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px; 
+    font-size: 1.3rem;
+}
+
+.filter-content li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #ccc; 
+    font-size: 2rem;
+    margin-left: 2.3rem;
+    line-height: 1.5rem;
+}
+
+.filter-content li.clicked:before {
+    color: #2447F9; 
+}
+
+.mainContent {
+    display: flex;
+    gap: 20px; /* Atur jarak antara kedua bagian */
+}
+
+.right-side {
+    width: 70%; 
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-right: 70px;
+    flex: 3;
+}
+
+/* Styles for discussion section */
+.discussion {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+.discussion a {
+    text-decoration: none;
+    color: #000;
+}
+
+.discussion-item {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: #fff;
+    line-height: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.discussion-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+.user-name {
+    font-weight: bold;
+}
+.post-time {
+    color: #888;
+    font-size: 0.9em;
+}
+.discussion-content {
+    margin-top: 20px;
+}
+.fa-comment {
+    margin-right: 5px;
+}
+.discussion-footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+    color: #888;
+}
+
+
+<!--Popup Form-->
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* PopUpForm */
+.popup-form {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.popup-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.popup-content h2{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.popup-content label{
+    font-size: 1.1rem;
+}
+
+.popup-content input{
+    font-size: 1.1rem;
+}
+
+.popup-content textarea{
+    font-size: 1.1rem;
+}
+
+.popup-content button{
+    font-size: 1rem;
+    border-radius: 30px;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#questionForm {
+    display: flex;
+    flex-direction: column;
+}
+
+#questionForm input,
+#questionForm textarea {
+    margin-bottom: 10px;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#questionForm button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+/* comment */
+.comment-form {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+}
+.comment-header{
+    margin-top: 15px;
+}
+
+.comment-form input[type="text"] {
+    flex-grow: 1;
+    margin-right: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1.1rem;
+}
+
+.comment-form button {
+    padding: 8px 16px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.comment-form button:hover {
+    background-color: #0056b3;
+}
+
+@media screen and (max-width: 1200px) {
+    .first-content h1 {
+        line-height: normal;
+        margin-left: 0;
+    }
+    .first-content h2 {
+        margin-left: 0;
+    }
+    .aside{
+        width: 100%;
+        margin-top: 0;
+        margin-left: 0;
+    }
+    .right-side {
+        width: 95%; /* Konten utama mengambil lebar penuh */
+        margin-right: 0;
+    }
+    input[type="text" i] {
+        margin-left: 10px;
+        width: 95%;
+        padding-block: 1px;
+        padding-inline: 2px;
+    }
+}
+
+@media (max-width: 992px) {
+    
+    .mainContent {
+        flex-direction: column;
+    }
+
+    .first-content h1 {
+        line-height: normal;
+    }
+
+    .aside {
+        width: 100%; /* Sidebar mengambil lebar penuh */
+        margin-top: 0
+    }
+    .aside .button-content {
+        margin-left: 35%;
+        padding: 3%;
+    }
+
+    .right-side {
+        width: 95%; /* Konten utama mengambil lebar penuh */
+        margin-right: 0;
+    }
+    input[type="text" i] {
+        margin-left: 10px;
+        width: 95%;
+        padding-block: 1px;
+        padding-inline: 2px;
+    }
+}
+@media (max-width: 650px) {
+    .first-content h1 {
+        text-align: center;
+        margin-left: 0%;
+    }
+    .aside{
+        margin-left: -5%;
+    }
+    .aside .button-content {
+        margin-left: 30%;
+        padding: 3%;
+    }
+
+}
+@media (max-width: 500px) {
+    body {
+        height: 100%;
+        font-size: 14px
+    }
+
+    header.navbar-container {
+        flex-direction: column;
+        height: auto;
+        justify-content: center; /* Center vertically */
+        align-items: center; /* Center horizontally */
+        width: 100%;
+        padding: 0.5rem;
+    }
+    .nav-list ul {
+        padding: 0;
+        text-align: center;
+    }
+    .nav-list li {
+        display: block;
+        margin: 10px 0;
+    }
+    
+    header.navbar-container .logo {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 0    ;
+    }
+    
+    header.navbar-container .logo img {
+        width: 40%;
+        margin: 0 auto; /* Center the logo horizontally */
+        align-items: center;
+    }
+    
+    header.navbar-container .nav-list ul {
+        width: 100%; /* Full width to utilize the space */
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center the navigation items horizontally */
+        gap: 0.5rem;
+    }
+    
+    header.navbar-container .nav-list li {
+        width: 100%; /* Full width to align with the parent */
+        display: flex;
+        justify-content: center; /* Center the links */
+    }
+    .aside{
+        margin-left: -10%;
+    }
+    .aside .button-content {
+        margin-left: 20%;
+        padding: 3%;
+    }
+    .filter-content{
+        margin-left: 17%;
+    }
+    .first-content h2 {
+        margin-left: 0;
+        font-size: 2rem;
+        margin-bottom: 0;
+    }
+    .first-content h1{
+        margin-left: 0;
+        font-size: 2.6rem;
+        margin-top: 0;
+        margin-bottom: 1rem;
+        line-height: 3.5rem;
+    }
+}
+

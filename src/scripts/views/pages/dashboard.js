@@ -63,7 +63,7 @@ const Dashboard = {
     <div class="main_education">
         <h1>Mengapa Kota Jakarta Sering Terjadi Banjir?</h1>
         <p>Banjir terparah yang melanda Jakarta terjadi pada bulan Januari 2020. Banjir ini menyebabkan lebih dari 60 ribu warga mengungsi dan menelan korban jiwa sekitar 66 orang. Genangan air mencapai ketinggian hingga 2-3 meter di beberapa daerah, memutus akses ke berbagai layanan dasar dan mengakibatkan kerugian ekonomi yang signifikan.</p>
-        <a href="../scripts/education.html">Education</a>
+        <a href="#/news">Education</a>
     </div>
     <div class="separator">
     <div class="indicator_info">
@@ -73,7 +73,7 @@ const Dashboard = {
     </div>
     <div class="last_content">
         <h1>Bagikan Informasi Terkini Mengenai Titik Banjir Jakarta pada Forum Diskusi</h1>
-        <a href="../scripts/forum.html">Forum</a>
+        <a href="#/report">Forum</a>
     </div>
     </div>
     `;
