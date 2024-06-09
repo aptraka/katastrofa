@@ -19,3 +19,13 @@ window.addEventListener('load', () => {
   app.renderPage();
   swRegister();
 });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var hamburgerButton = document.getElementById('hamburgerButton');
+    var navigation = document.querySelector('.app-bar .app-bar__navigation');
+
+    hamburgerButton.addEventListener('click', function() {
+      navigation.classList.toggle('visible');
+    });
+  });
+

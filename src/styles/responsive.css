@@ -1,94 +1,709 @@
 @media screen and (min-width: 650px) {
-    .app-bar {
-      grid-template-columns: 1fr auto;
-      padding: 8px 32px;
-    }
-   
-    .app-bar .app-bar__brand h1 {
-      font-size: 1.5em;
-    }
-   
-    .app-bar .app-bar__menu {
-      display: none;
-    }
-   
-    .app-bar .app-bar__navigation {
-      position: static;
-      width: 100%;
-    }
-   
-    .app-bar .app-bar__navigation ul li {
-      display: inline-block;
-    }
-   
-    .app-bar .app-bar__navigation ul li a {
-      display: inline-block;
-      width: 120px;
-      text-align: center;
-      margin: 0;
-    }
-   
+  .app-bar {
+    grid-template-columns: 1fr auto;
+    padding: 8px 32px;
   }
-   
-  @media screen and (min-width: 800px) {
-    .app-bar .app-bar__brand h1 {
-      font-size: 2em;
-    }
+
+  .app-bar .app-bar__brand h1 {
+    font-size: 1.5em;
   }
-  
-  @media (max-width: 768px) {
-    .weather-card {
-        width: 80%;
-        max-width: 500px;
-    }
 
-    .weather-card .current img {
-        width: 48px;
-        height: 48px;
-    }
+  .app-bar .app-bar__menu {
+    display: none;
+  }
 
-    .weather-card .details {
-        font-size: 12px;
-    }
+  .app-bar .app-bar__navigation {
+    position: static;
+    width: 100%;
+  }
+
+  .app-bar .app-bar__navigation ul li {
+    display: inline-block;
+  }
+
+  .app-bar .app-bar__navigation ul li a {
+    display: inline-block;
+    width: 120px;
+    text-align: center;
+    margin: 0;
+  }
+
+}
+
+@media screen and (min-width: 800px) {
+  .app-bar .app-bar__brand h1 {
+    font-size: 2em;
+  }
+}
+
+@media (max-width: 768px) {
+  .weather-card {
+    width: 80%;
+    max-width: 500px;
+  }
+
+  .weather-card .current img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .weather-card .details {
+    font-size: 12px;
+  }
 }
 
 @media (max-width: 480px) {
-    .weather-card {
-        width: 95%;
-        max-width: none;
-    }
+  .weather-card {
+    width: 95%;
+    max-width: none;
+  }
 
-    .weather-card header {
-        padding: 10px;
-    }
+  .weather-card header {
+    padding: 10px;
+  }
 
-    .weather-card .location {
-        font-size: 16px;
-    }
+  .weather-card .location {
+    font-size: 16px;
+  }
 
-    .weather-card .region, .weather-card .country {
-        font-size: 12px;
-    }
+  .weather-card .region,
+  .weather-card .country {
+    font-size: 12px;
+  }
 
-    .weather-card .current {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+  .weather-card .current {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-    .weather-card .current img {
-        margin-bottom: 10px;
-    }
+  .weather-card .current img {
+    margin-bottom: 10px;
+  }
 
-    .weather-card .details {
-        font-size: 12px;
-    }
+  .weather-card .details {
+    font-size: 12px;
+  }
 
-    .weather-card .report-button {
-        padding: 10px;
-    }
+  .weather-card .report-button {
+    padding: 10px;
+  }
 
-    .weather-card .report-button button {
-        padding: 8px 16px;
-        font-size: 14px;
-    }
+  .weather-card .report-button button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
 }
+
+@media only screen and (max-width: 1200px) {
+  .app-bar .app-bar__navigation {
+    width: 100%;
+    left: 0;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .forum-button {
+    font-size: 1rem;
+    line-height: 1rem;
+    inline-size: 13rem;
+    margin-left: 30%;
+  }
+
+  .mid_content,
+  .separator {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .education_one,
+  .indicator_info,
+  .last_content {
+    min-width: auto;
+    margin-right: 0;
+  }
+
+  .education_one h1 {
+    font-size: 2.5rem;
+  }
+
+  .main_education h1 {
+    font-size: 2.5rem;
+  }
+
+  .main_education a {
+    margin-left: 40%;
+    inline-size: 13rem;
+  }
+
+  .indicator_info h1 {
+    font-size: 2.5rem;
+  }
+
+  .last_content a {
+    margin-left: 25%;
+    inline-size: 13rem;
+  }
+
+  .last_content h1 {
+    margin-top: 25%;
+  }
+
+  .info_one h1{
+    font-size: 2rem;
+  }
+
+  .info_one p{
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+  }
+
+  .info_two h1{
+    font-size: 2rem;
+    margin-bottom: 0;
+    line-height: 2.5rem;
+  }
+
+  .info_two img{
+    width: 100%;
+    min-width: 200px;
+    margin-top: 0;
+  }
+
+  .info_two p{
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .info_two h2{
+    font-size: 1.7rem;
+    line-height: 1.8rem;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  .header .header_text p{
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+  }
+
+  .news_item h1{
+    font-size: 1.5rem;
+    line-height: 1.3rem;
+  }
+
+  .news_item p{
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+  }
+
+  .first-content h1{
+    font-size: 2.5rem;
+    align-self: center; 
+    text-align: center;
+    margin-right: 0;
+    margin-left: 2.5rem;
+  }
+
+  .first-content h2{
+    font-size: 2.3rem;
+    line-height: 1.8rem;
+    margin-left: 2.5rem;
+  }
+}
+
+/* Responsive styles for max-width 900px */
+@media only screen and (max-width: 900px) {
+  .app-bar .app-bar__navigation {
+    width: 100%;
+    left: 0;
+  }
+
+  .hero h1 {
+    font-size: 2.3rem;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .forum-button {
+    font-size: 1rem;
+    line-height: 1rem;
+    inline-size: 13rem;
+    margin-left: 20%;
+  }
+
+  .mid_content,
+  .separator {
+    grid-template-columns: 1fr;
+  }
+
+  .education_one,
+  .indicator_info,
+  .last_content {
+    min-width: auto;
+    margin-right: 0;
+  }
+
+  .main_education a,
+  .last_content a {
+    margin-left: 20%;
+    inline-size: 60%;
+  }
+
+  .education_one h1 {
+    font-size: 2.3rem;
+    margin-top: 5%;
+  }
+
+  .main_education h1 {
+    font-size: 2.3rem;
+  }
+
+  .main_education a {
+    margin-left: 33%;
+    font-size: 1rem;
+    line-height: 1rem;
+    inline-size: 13rem;
+  }
+
+  .indicator_info h1 {
+    font-size: 2.3rem;
+  }
+
+  .last_content {
+    margin-left: 0;
+  }
+
+  .last_content a {
+    margin-left: 33%;
+    font-size: 1rem;
+    line-height: 1rem;
+    inline-size: 13rem;
+  }
+
+  .last_content h1 {
+    margin-top: 5%;
+    font-size: 2.3rem;
+  }
+
+  .info_one h1{
+    font-size: 2rem;
+  }
+
+  .info_one p{
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+  }
+
+  .info_two h1{
+    font-size: 2rem;
+    margin-bottom: 0;
+    line-height: 2rem;
+  }
+
+  .info_two img{
+    width: 100%;
+    min-width: 200px;
+    margin-top: 0;
+  }
+
+  .info_two p{
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .info_two h2{
+    font-size: 1.7rem;
+    line-height: 1.8rem;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  .header .header_text p{
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+  }
+
+  .news_item h1{
+    font-size: 1.5rem;
+    line-height: 1.3rem;
+  }
+
+  .news_item p{
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+  }
+
+}
+
+/* Responsive styles for max-width 600px */
+@media only screen and (max-width: 600px) {
+  .app-bar .app-bar__navigation {
+    width: 100%;
+    left: 0;
+    display: none; /* Sembunyikan secara default */
+    margin-top: 1.5rem;
+  }
+
+  .app-bar .app-bar__navigation.visible {
+    display: block; /* Tampilkan ketika kelas 'visible' ditambahkan */
+  }
+
+  .app-bar .app-bar__navigation ul{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero h2 {
+    font-size: 1.7rem;
+  }
+
+  .hero img {
+    width: 100%;
+  }
+
+  .forum-button {
+    font-size: 1rem;
+    line-height: 1rem;
+    inline-size: 12rem;
+    margin-left: 10%;
+  }
+
+  .mid_content,
+  .separator {
+    grid-template-columns: 1fr;
+    margin-top: 5%;
+  }
+
+  .education_one,
+  .indicator_info,
+  .last_content {
+    min-width: auto;
+    margin-right: 0;
+  }
+
+  .main_education a,
+  .last_content a {
+    margin-left: 15%;
+    inline-size: 70%;
+  }
+
+  .education_one h1 {
+    font-size: 2rem;
+    margin-top: 5%;
+  }
+
+  .education_one p {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+  }
+
+  .main_education h1 {
+    font-size: 2rem;
+  }
+
+  .main_education p {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+  }
+
+  .main_education a {
+    margin-left: 25%;
+    font-size: 1rem;
+    line-height: 1rem;
+    inline-size: 13rem;
+  }
+
+  .indicator_info h1 {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+
+  .indicator_info p {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+  }
+
+  .last_content {
+    margin-left: 0;
+  }
+
+  .last_content a {
+    margin-left: 22%;
+    font-size: 1rem;
+    line-height: 1rem;
+    inline-size: 13rem;
+  }
+
+  .last_content h1 {
+    margin-top: 5%;
+    font-size: 2rem;
+  }
+
+  .info_one{
+    margin-right: 1rem;
+  }
+
+  .info_one h1 {
+    font-size: 1.7rem;
+    line-height: 1.9rem;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  .info_one p{
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    margin-top: 1rem;
+  } 
+
+  .info_two h1 {
+    font-size: 1.7rem;
+    line-height: 1.9rem;
+  }
+
+  .info_two p{
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+  } 
+
+  .info_two img{
+    width: 100%;
+    min-width: 200px;
+  }
+
+  .info_two h2{
+    font-size: 1.3rem;
+    line-height: 1.4rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+
+  .information{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .news_item{
+    margin-right: 1rem;
+  }
+
+  .news_item h1 {
+    font-size: 1.7rem;
+    line-height: 1.9rem;
+  }
+
+  .news_item p{
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    margin-top: 1rem;
+  }
+
+  .news_item h1, .news_item a{
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+  }
+
+  .header {
+    margin-bottom: 1rem;
+  }
+
+  .header .header_text p{
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+  }
+}
+
+/* Responsive styles for max-width 450px */
+@media only screen and (max-width: 450px) {
+  .app-bar .app-bar__navigation {
+    width: 100%;
+    left: 0;
+    display: none; /* Sembunyikan secara default */
+    margin-top: 1.5rem;
+  }
+
+  .app-bar .app-bar__navigation.visible {
+    display: block; /* Tampilkan ketika kelas 'visible' ditambahkan */
+  }
+
+  .app-bar .app-bar__navigation ul{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero h2 {
+    font-size: 1.2rem;
+  }
+
+  .hero img {
+    width: 100%;
+  }
+
+  .forum-button {
+    font-size: 0.7rem;
+    line-height: 0.6rem;
+    inline-size: 8rem;
+    margin-left: 8%;
+  }
+
+  .mid_content,
+  .separator {
+    grid-template-columns: 1fr;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .education_one,
+  .indicator_info,
+  .last_content {
+    min-width: auto;
+    margin-right: 0;
+  }
+
+  .main_education a,
+  .last_content a {
+    margin-left: 10%;
+    inline-size: 80%;
+  }
+
+  .education_one h1 {
+    font-size: 1.5rem;
+    margin-top: 5%;
+    line-height: 1.8rem;
+  }
+
+  .education_one p {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+  }
+
+  .main_education h1 {
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+  }
+
+  .main_education p {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+  }
+
+  .main_education a {
+    margin-left: 13%;
+    font-size: 1rem;
+    line-height: 1rem;
+    inline-size: 12rem;
+  }
+
+  .indicator_info h1 {
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+  }
+
+  .indicator_info p {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+  }
+
+  .last_content {
+    margin-left: 0;
+  }
+
+  .last_content a {
+    margin-left: 8%;
+    font-size: 1rem;
+    line-height: 1rem;
+    inline-size: 12rem;
+  }
+
+  .last_content h1 {
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+  }
+
+  .info_one h1 {
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  .info_one p{
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    margin-top: 1rem;
+  } 
+
+  .info_two h1 {
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+  }
+
+  .info_two p{
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+  } 
+
+  .info_two img{
+    width: 100%;
+    min-width: 200px;
+  }
+
+  .info_two h2{
+    font-size: 1.3rem;
+    line-height: 1.4rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+
+  .information{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .news_item h1 {
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+  }
+
+  .news_item p{
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    margin-top: 1rem;
+  }
+
+  .news_item h1, .news_item a{
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+  }
+
+  .header {
+    margin-bottom: 1rem;
+  }
+
+  .header .header_text p{
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+  }
+}
+

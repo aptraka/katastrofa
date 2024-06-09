@@ -184,7 +184,7 @@ main {
     display: flex;
     transition: all 0.15s ease-in;
     line-height: 1rem;
-    margin-left: 40%;
+    margin-left: 45%;
     text-decoration: none;
     margin-top: 1rem;
 }
@@ -267,7 +267,7 @@ main {
   display: flex;
   transition: all 0.15s ease-in;
   line-height: 1rem;
-  margin-left: 30%;
+  margin-left: 40%;
   text-decoration: none;
   margin-top: 1rem;
 }
@@ -342,7 +342,7 @@ footer img {
     display: flex;
     transition: all 0.15s ease-in;
     line-height: 1rem;
-    margin-left: 25%;
+    margin-left: 35%;
     text-decoration: none;
 }
 
