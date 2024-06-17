@@ -1,7 +1,3 @@
-*,
-* {
-    box-sizing: border-box;
-}
 
 body {
     font-family: 'Quicksand', sans-serif;
@@ -10,42 +6,58 @@ body {
     display: flex;
     flex-direction: column;
 }
-
-
-.search-content {
-    align-items: center;
-    justify-content: center; /* Center the form horizontally */
-    width: 100%; /* Full width container */
-    padding: 10px; /* Optional padding for spacing */
+#openFormButton {
+    background-color: #007bff; /* Warna biru */
+    color: white; /* Warna teks putih */
+    padding: 10px 20px; /* Padding untuk ukuran tombol */
+    border: none; /* Hilangkan border default */
+    border-radius: 25px; /* Membuat sudut melengkung */
+    cursor: pointer; /* Menambahkan pointer pada hover */
+    font-size: 16px; /* Ukuran font */
 }
 
-.search-container {
-    display: flex;
-    position: relative;
-    width: 100%;
-    max-width: 1000px;
-    margin-left: 0.7rem;
-    font-size: 1.5rem;
+#openFormButton:hover {
+    background-color: #0056b3; /* Warna biru lebih gelap saat dihover */
 }
 
-.search-content i {
-    position: absolute;
-    left: 10px; /* Adjust the position of the icon */
-    top: 50%;
-    transform: translateY(-50%);
-    color: #aaa;
+.swal-content-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 10px;
 }
 
-.search-content input {
-    width: 100%;
-    padding: 8px 12px;
-    padding-left: 40px; /* Adjust for the icon */
+.swal-content-container label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.swal-content-container input,
+.swal-content-container textarea {
+    padding: 10px;
+    border-radius: 5px;
     border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box; /* Ensures padding is included in the element's total width and height */
-    font-size: 1.2rem;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 14px;
 }
 
+#swal-map {
+    width: 100%;
+    height: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.swal2-container .swal2-html-container {
+    text-align: left;
+    max-height: none;
+    overflow: visible;
+}
+
+.swal2-popup {
+    width: 600px !important;
+}
 .first-content {
     text-align: center;
     align-items: center;
@@ -96,48 +108,6 @@ body {
     transition: all 0.15s ease-in;
     margin-left: 3rem;
     font-size: 1.3rem;
-}
-
-.button-content a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.filter-content {
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
-    align-items: center;
-    margin-left: 3rem;
-    max-width: 90%;
-}
-
-.filter-content ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.filter-content li {
-    margin-bottom: 10px;
-    position: relative;
-    padding-left: 20px; 
-    font-size: 1.3rem;
-}
-
-.filter-content li:before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: #ccc; 
-    font-size: 2rem;
-    margin-left: 2.3rem;
-    line-height: 1.5rem;
-}
-
-.filter-content li.clicked:before {
-    color: #2447F9; 
 }
 
 .mainContent {
@@ -202,6 +172,9 @@ body {
 .discussion-content {
     margin-top: 20px;
 }
+.discussion-content .author {
+    font-weight: bold;
+}
 .fa-comment {
     margin-right: 5px;
 }
@@ -212,160 +185,31 @@ body {
     color: #888;
 }
 
-
-<!--Popup Form-->
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4);
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
+.container-detail {
+    max-width: 800px;
+    margin: 0 auto;
     padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+.report, .comments {
+    margin-bottom: 20px;
 }
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-/* PopUpForm */
-.popup-form {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
-}
-
-.popup-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 600px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-.popup-content h2{
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-.popup-content label{
-    font-size: 1.1rem;
-}
-
-.popup-content input{
-    font-size: 1.1rem;
-}
-
-.popup-content textarea{
-    font-size: 1.1rem;
-}
-
-.popup-content button{
-    font-size: 1rem;
-    border-radius: 30px;
-}
-
-.close-button {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close-button:hover,
-.close-button:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-#questionForm {
-    display: flex;
-    flex-direction: column;
-}
-
-#questionForm input,
-#questionForm textarea {
+.report-item, .comment-item {
     margin-bottom: 10px;
-    padding: 8px;
-    width: 100%;
-    box-sizing: border-box;
 }
-
-#questionForm button {
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    cursor: pointer;
-    align-self: flex-end;
+.report-item strong, .comment-item strong {
+    display: inline-block;
+    width: 150px;
 }
-
-/* comment */
-.comment-form {
-    margin-top: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: #f4f4f4;
-    border-radius: 5px;
+.comments h3 {
+    margin-top: 0;
 }
-.comment-header{
-    margin-top: 15px;
-}
-
-.comment-form input[type="text"] {
-    flex-grow: 1;
-    margin-right: 10px;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1.1rem;
-}
-
-.comment-form button {
-    padding: 8px 16px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.comment-form button:hover {
-    background-color: #0056b3;
+#map {
+    height: 400px;
+    margin-top: 20px;
+    border-radius: 8px;
 }
 
 @media screen and (max-width: 1200px) {
@@ -511,5 +355,73 @@ body {
         margin-bottom: 1rem;
         line-height: 3.5rem;
     }
+}
+
+
+.review__form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.review__form h3 {
+    margin-top: 0;
+    color: #ff0000;
+    text-align: center;
+}
+
+.review__form .form__section {
+    margin-bottom: 20px;
+}
+
+.review__form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: bold;
+}
+
+.review__form input[type="text"],
+.review__form textarea {
+    width: 100%;
+    padding: 10px;
+    min-height: 44px;
+    min-width: 44px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+.review__form input[type="text"]:focus,
+.review__form textarea:focus {
+    border-color: #ff0000;
+    outline: none;
+}
+
+.review__form textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+.review__form button[type="submit"] {
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    min-height: 44px;
+    min-width: 44px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.review__form button[type="submit"]:hover {
+    background-color: #cc0000;
 }
 

@@ -4,7 +4,6 @@
 @import url('./news.css');
 @import url('./report.css');
 
-
 html {
   scroll-behavior: smooth;
 }
@@ -25,14 +24,15 @@ body {
   AppBar
 */
 
+
 #hamburgerButton {
   min-height: 44px;
   min-width: 44px;
-  color: #f0f4f8;
+  color: white;
 }
 .app-bar {
   padding: 8px 16px;
-  background-color:#1C2D3C;
+  background-color: #1C2D3C;
   display: grid;
   grid-template-columns: auto 1fr auto;
   gap: 10px;
@@ -60,21 +60,25 @@ body {
   align-items: center;
 }
 
+.app-bar .app-bar__brand h1 {
+  color: rgb(52, 216, 231);
+  font-size: 22px;
+  font-weight: bold;
+  user-select: none;
+}
 .app-bar .app-bar__brand img {
-  width: 160px;
+  width: 50px;
+  margin-right: 10px;
 }
 
 .app-bar .app-bar__navigation {
-  display: flex; /* Mengubah display menjadi flex */
-  flex-direction: row; /* Menyusun child elements secara horizontal */
-  flex-wrap: wrap; /* Memungkinkan wrapping jika tidak cukup ruang */
   position: absolute;
   top: 50px;
   left: -180px;
   width: 150px;
   transition: all 0.3s;
   padding: 8px;
-  background-color:#1C2D3C;
+  background-color: #1C2D3C;
   overflow: hidden;
 }
 
@@ -82,29 +86,17 @@ body {
   left: 0;
 }
 
-.app-bar .app-bar__navigation ul {
-  display: flex; /* Mengatur display menjadi flex */
-  flex-direction: row; /* Menyusun child elements secara horizontal */
-}
-
-.app-bar .app-bar__navigation ul li {
-  display: flex;
+.app-bar .app-bar__navigation ul li a {
+  display: inline-block;
   text-decoration: none;
-  color: rgb(255, 255, 255);
-  margin: 5px;
-  align-items: center;
-  text-align: center;
-}
-
-.app-bar .app-bar__navigation a {
-  display: flex;
-  text-decoration: none;
-  color: rgb(255, 255, 255);
-  align-items: center; /* Ini memusatkan teks secara vertikal */
-  text-align: center;
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
-  font-weight: 500;
+  color: white;
+  font-weight: bold;
+  font-size: 1.3rem;
+  padding: 8px;
+  margin-bottom: 5px;
+  width: 100%;
+  min-height: 44px;
+  min-width: 44px;
 }
 
 /*
@@ -284,13 +276,13 @@ main {
 
 footer {
   margin-top: 3rem;
-  text-align: center; /* Pusatkan gambar secara horizontal */
-  background-color: #1C2D3C; /* Atur warna latar belakang */
+  text-align: center;
+  background-color: #1C2D3C;
 }
 
 footer img {
-  max-width: 200px; /* Batasi lebar gambar */
-  max-height: 100px; /* Batasi tinggi gambar */
+  max-width: 200px; 
+  max-height: 100px;
 }
 
 
@@ -308,6 +300,10 @@ footer img {
   height: 100%;
   justify-content: center;
   margin-top: 1rem;
+}
+.image-container img{
+  width: 100px;
+  height: 100px;
 }
 
 .text-container {
@@ -333,7 +329,7 @@ footer img {
     background-color: #53CB8E;
     font-size: 1.2rem;
     font-weight: 700;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     cursor: pointer;
     inline-size: 12rem;
     justify-content: center;
@@ -347,8 +343,8 @@ footer img {
 }
 
 .forum-button:hover {
-  background-color: #0d2e1d;
-  color: white;
+  background-color: #82e5b2;
+  color: rgba(220, 8, 8, 0.958);
   border: 2px solid #0d2e1d;
 }
 
@@ -358,6 +354,12 @@ footer img {
   max-height: 300px;
   align-items: center;
   text-align: center;
+}
+
+.image-container h2 {
+  margin-block: 1rem;
+    font-size: 3rem;
+    color: #53CB8E;
 }
 
 .skip-link {
@@ -413,4 +415,39 @@ footer img {
   font-size: 18px;
   color: white;
   cursor: pointer;
+}
+
+
+.fab {
+  position: fixed;
+  top: 70px; /* Adjust this value to leave 10px margin below the app bar */
+  right: 16px;
+  width: 56px;
+  height: 56px;
+  background-color: #ffffff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 1000;
+  padding: 12px;
+  box-sizing: content-box;
+}
+
+
+.fab:hover {
+  background-color: #412b76;
+}
+
+.swal2-popup {
+  width: auto !important;
+}
+
+#swal-map {
+  height: 400px;
+  width: 100%;
 }

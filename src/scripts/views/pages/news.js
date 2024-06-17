@@ -1,6 +1,13 @@
+
+import Swal from 'sweetalert2';
+import DisasterDBSource from '../../data/data-source';
+import { badConnection } from '../templates/template-creator';
+
 const news = {
     async render() {
         return `
+
+    <div id="offline"></div>
         <div id="dynamicContent">
             <main>
                 <div class="content">
@@ -20,6 +27,7 @@ const news = {
     },
     
     async afterRender() {
+        const offlineContainer = document.querySelector('#offline');
         const dynamicContent = document.getElementById('dynamicContent');
         const mainContentHTML = `
             <div class="info_one">
@@ -45,61 +53,46 @@ const news = {
         dynamicContent.innerHTML = mainContentHTML;
 
         // Populate news data
-        const newsContainer = document.getElementById('news_container');
-        const newsData = [
-            {
-                image: "../images/detik.png",
-                source: "detikNews",
-                link: "https://rb.gy/l2mh0p",
-                title: "Cara Cek Banjir di Jakarta: Info Pantau Peta Banjir dan Cara Lapor",
-                description: "Cara cek dan pantau informasi banjir di Jakarta dapat dilakukan secara online melalui laman resmi Pantau Banjir..."
-            },
-            {
-                image: "../images/detik.png",
-                source: "detikNews",
-                link: "https://rb.gy/8dgduz",
-                title: "Jakarta Masih Langganan Banjir, Ini Solusi PUPR",
-                description: "Kementerian Pekerjaan Umum dan Perumahan Rakyat (PUPR) menempuh berbagai cara untuk mengatasi persoalan banjir..."
-            },
-            {
-                image: "../images/detik.png",
-                source: "detikNews",
-                link: "https://rb.gy/8dgduz",
-                title: "Jakarta Masih Langganan Banjir, Ini Solusi PUPR",
-                description: "Kementerian Pekerjaan Umum dan Perumahan Rakyat (PUPR) menempuh berbagai cara untuk mengatasi persoalan banjir..."
-            },
-            {
-                image: "../images/detik.png",
-                source: "detikNews",
-                link: "https://rb.gy/8dgduz",
-                title: "Jakarta Masih Langganan Banjir, Ini Solusi PUPR",
-                description: "Kementerian Pekerjaan Umum dan Perumahan Rakyat (PUPR) menempuh berbagai cara untuk mengatasi persoalan banjir..."
-            },
-            {
-                image: "../images/detik.png",
-                source: "detikNews",
-                link: "https://rb.gy/8dgduz",
-                title: "Jakarta Masih Langganan Banjir, Ini Solusi PUPR",
-                description: "Kementerian Pekerjaan Umum dan Perumahan Rakyat (PUPR) menempuh berbagai cara untuk mengatasi persoalan banjir..."
-            },
-        ];
-
-        newsData.forEach(news => {
-            const newsElement = `
-                <div class="news_item">
-                    <div class="header">
-                        <img src="${news.image}" alt="${news.source}" />
-                        <div class="header_text">
-                            <p>${news.source}</p>
-                            <p>${news.link}</p>
+       
+        try {
+            Swal.fire({
+              title: 'Get All Data...',
+              text: 'Please wait while we process Data.',
+              allowOutsideClick: false,
+              didOpen: () => {
+                Swal.showLoading();
+              },
+            });
+            const newsContainer = document.getElementById('news_container');
+            const report = await DisasterDBSource.getAllNews();
+            const newsData = report.data.reports
+            console.log(newsData);
+            newsData.forEach(news => {
+                const newsElement = `
+                    <div class="news_item">
+                        <div class="header">
+                            <img src="../images/detik.png" alt="${news.author}" />
+                            <div class="header_text">
+                                <p>${news.author}</p>
+                                <p>${news.url}</p>
+                            </div>
                         </div>
+                        <h1><a href="${news.url}" target="_blank">${news.title}</a></h1>
+                        <p>${news.description}</p>
                     </div>
-                    <h1><a href="${news.link}" target="_blank">${news.title}</a></h1>
-                    <p>${news.description}</p>
-                </div>
-            `;
-            newsContainer.innerHTML += newsElement;
-        });
+                `;
+                newsContainer.innerHTML += newsElement;
+            });
+
+            Swal.close();
+          } catch (error) {
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: `Something went wrong! \nError: ${error}`,
+            });
+            offlineContainer.innerHTML = badConnection();
+          }
     }
 }
 export default news;

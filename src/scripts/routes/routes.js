@@ -7,8 +7,8 @@ const routes = {
   '/': Dashboard,
   '/home': Dashboard,
   '/news': News,
-  '/report': Report
-  // '/detail/:id': DetailReport,
+  '/reports': Report,
+  '/detail/:id': DetailReport,
 };
 
 export default routes;

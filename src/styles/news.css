@@ -1,6 +1,4 @@
-* {
-    box-sizing: border-box;
-}
+
 
 body {
     font-family: "Quicksand", sans-serif;
@@ -50,9 +48,6 @@ header.navbar-container .nav-list li:hover a {
     background-color: #567494;
     color: white;
 }
-main{
-    margin: 1rem;
-}
 
 .info_one {
     background-color: #eaf2f9;
@@ -69,7 +64,7 @@ main{
     grid-gap: 1rem;
 }
 .info_two {
-    grid-row: auto; /* Mengatur ulang posisi grid */
+    grid-row: auto;
     display: grid;
     background-color: #eaf2f9;
     padding: 2rem;
@@ -196,26 +191,26 @@ footer img {
         margin: 0;
         padding: 0;
         width: 100%;
-        overflow-x: hidden; /* Mencegah scroll horizontal */
+        overflow-x: hidden; 
     }
 
     header.navbar-container {
         flex-direction: column;
         height: auto;
-        justify-content: center; /* Center vertically */
-        align-items: center; /* Center horizontally */
+        justify-content: center; 
+        align-items: center;
         width: 100%;
         padding: 0.5rem;
     }
     .nav-list ul {
         padding: 0;
         text-align: center;
-        width: 100%; /* Pastikan menggunakan full width */
+        width: 100%;
     }
     .nav-list li {
         display: block;
         margin: 10px 0;
-        width: 100%; /* Full width */
+        width: 100%;
     }
     
     header.navbar-container .logo {
@@ -225,22 +220,22 @@ footer img {
     
     header.navbar-container .logo img {
         width: 180px;
-        margin: 0 auto; /* Center the logo horizontally */
+        margin: 0 auto;
     }
     
     header.navbar-container .nav-list ul {
         display: flex;
         flex-direction: column;
-        align-items: center; /* Center the navigation items horizontally */
+        align-items: center;
         gap: 0.5rem;
     }
     
     main {
-        grid-template-columns: 1fr; /* Satu kolom pada layar kecil */
+        grid-template-columns: 1fr;
     }
 
     .info_one {
-        grid-column: 1; /* Menggunakan satu kolom */
+        grid-column: 1;
     }
 
     .info_one h1{
@@ -257,8 +252,8 @@ footer img {
     }
 
     .info_two {
-        grid-row: auto; /* Kembali ke pengaturan default */
-        margin-right: 0; /* Hilangkan margin kanan */
+        grid-row: auto;
+        margin-right: 0;
     }
 
     .info_two h1{
@@ -287,7 +282,7 @@ footer img {
     }
 
     #news_container {
-        grid-row: auto; /* Kembali ke pengaturan default */
+        grid-row: auto;
     }
 
     .news_item .header_text p{
@@ -339,8 +334,8 @@ footer img {
     }
 
     .info_two {
-        grid-row: auto; /* Kembali ke pengaturan default */
-        margin-right: 0; /* Hilangkan margin kanan */
+        grid-row: auto;
+        margin-right: 0;
     }
 
     .info_two h1{
@@ -369,7 +364,7 @@ footer img {
     }
 
     #news_container {
-        grid-row: auto; /* Kembali ke pengaturan default */
+        grid-row: auto; 
     }
 
     .news_item .header_text p{
