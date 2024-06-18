@@ -12,7 +12,7 @@ const Report = {
         </div>
         <div class="mainContent">
             <div class="aside">
-                    <button id="openFormButton"  class="button-content">Berikan Infornasi</button>
+                    <button id="openFormButton"  class="button-content">Berikan Informasi</button>
             </div>
             <div class="right-side">
                 <div class="discussion" id="discussion-container">
@@ -73,12 +73,24 @@ const Report = {
                 focusConfirm: false,
                 didOpen: () => {
                     const defaultPosition = { lat: -6.200000, lng: 106.816666 };
-                    const swalMap = L.map('swal-map').setView([defaultPosition.lat, defaultPosition.lng], 13);
+
+                    const savedPosition = localStorage.getItem('markerPositionLeaflet');
+                    let initialLat, initialLng;
+
+                    if (savedPosition) {
+                        const { lat, lng } = JSON.parse(savedPosition);
+                        initialLat = lat;
+                        initialLng = lng;
+                    } else {
+                        initialLat = defaultPosition.lat;
+                        initialLng = defaultPosition.lng;
+                    }
+                    const swalMap = L.map('swal-map').setView([initialLat, initialLng], 13);
                     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                         attribution: '&copy; OpenStreetMap contributors'
                     }).addTo(swalMap);
 
-                    let marker = L.marker([defaultPosition.lat, defaultPosition.lng], { draggable: true }).addTo(swalMap);
+                    let marker = L.marker([initialLat, initialLng], { draggable: true }).addTo(swalMap);
 
                     marker.on('dragend', () => {
                         const position = marker.getLatLng();

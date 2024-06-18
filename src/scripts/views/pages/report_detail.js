@@ -13,19 +13,28 @@ const DetailReport = {
     },
     async afterRender() {
       const url = UrlParser.parseActiveUrlWithOutCombiner();
-      const restoContainer = document.querySelector('#report');
+      const reportContainer = document.querySelector('#report');
       try {
         Swal.fire({
-          title: 'Get All Data Resto...',
-          text: 'Please wait while we process Restaurant Data.',
+          title: 'Get All Data...',
+          text: 'Please wait while we process Data.',
           allowOutsideClick: false,
           didOpen: () => {
             Swal.showLoading();
           },
         });
         const reportData = await DisasterDBSource.detailReport(url.id);
-        console.log(reportData);
-        restoContainer.innerHTML = createDisasterDetailTemplate(reportData);
+        reportContainer.innerHTML = createDisasterDetailTemplate(reportData);
+        console.log(reportData.data.report.latitude, reportData.data.report.longitude);
+        var map = L.map('mapReport').setView([reportData.data.report.longitude,reportData.data.report.latitude], 13);
+
+              L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+              }).addTo(map);
+
+              L.marker([reportData.data.report.longitude,reportData.data.report.latitude]).addTo(map)
+                  .bindPopup('Lokasi Bencana!')
+                  .openPopup();
         Swal.close();
       } catch (error) {
         Swal.fire({
@@ -34,6 +43,9 @@ const DetailReport = {
           text: `Something went wrong! \nError: ${error}`,
         });
       }
+
+
+
       const addReview = document.querySelector('#reviewForm');
       addReview.addEventListener('submit', async (event) => {
         event.preventDefault();

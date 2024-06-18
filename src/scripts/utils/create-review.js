@@ -2,11 +2,11 @@
 import Swal from 'sweetalert2';
 import DisasterDBSource from '../data/data-source';
 
-const reportReview = async (url, name, review) => {
+const reportReview = async (url, name, comment) => {
   const inputReview = {
     idReport: url.id,
-    name,
-    review,
+    name:name,
+    comment:comment,
   };
 
   const allReviewContainer = document.querySelector('.review__container');
@@ -20,7 +20,7 @@ const reportReview = async (url, name, review) => {
   const newReview = `
     <div class="review__item">
         <h5>${name} <span>(${date})</span></h5>
-        <p>${review}</p>
+        <p>${comment}</p>
     </div>
     `;
 

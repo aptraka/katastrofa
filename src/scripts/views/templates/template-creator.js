@@ -19,6 +19,13 @@ const createDisasterDetailTemplate = (detail) => `
             <div class="report-item">
                 <strong>Deskripsi:</strong> ${detail.data.report.description}
             </div>
+
+            <div class="report-item">
+                <strong>Lokasi:</strong>
+            </div>
+            <div id="mapReport" style="width: 550px; height: 450px"></div>
+            <script>
+            </script>
         </div>
         <div class="resto__overview">
           <h3>Komentar</h3>
@@ -49,6 +56,7 @@ const createDisasterDetailTemplate = (detail) => `
       </div>
     </div>
 `;
+
 
 const createReportItemtemplate = (data)=>`
 <div class="discussion-item">

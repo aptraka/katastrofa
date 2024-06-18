@@ -22,7 +22,7 @@ window.addEventListener('load', () => {
 });
 
 
-const defaultPosition = { lat: -6.1751, lng: 106.8271 }; // Monas, Jakarta
+    const defaultPosition = { lat: -6.1751, lng: 106.8271 }; // Monas, Jakarta
     let marker;
 
     const savedPosition = localStorage.getItem('markerPositionLeaflet');
@@ -72,77 +72,6 @@ const defaultPosition = { lat: -6.1751, lng: 106.8271 }; // Monas, Jakarta
                 initialLat = newPosition.lat;
                 initialLng = newPosition.lng;
 
-                Swal.fire({
-                    title: 'Location Updated',
-                    text: `Marker is at: lat = ${initialLat}, lng = ${initialLng}`,
-                    icon: 'success'
-                });
-            }
-        });
-    });
-
-    function requestLocationPermission() {
-      return new Promise((resolve, reject) => {
-          navigator.geolocation.getCurrentPosition(
-              (position) => {
-                  resolve({
-                      lat: position.coords.latitude,
-                      lng: position.coords.longitude
-                  });
-              },
-              (error) => {
-                  reject(error);
-              }
-          );
-      });
-  }
-  requestLocationPermission()
-    .then((position) => {
-        initialLat = position.lat;
-        initialLng = position.lng;
-        localStorage.setItem('markerPositionLeaflet', JSON.stringify({
-            lat: initialLat,
-            lng: initialLng
-        }));
-        initializeApp();
-    })
-    .catch((error) => {
-        // Jika izin ditolak, tampilkan popup untuk memilih lokasi manual
-        Swal.fire({
-            title: 'Choose Marker Location',
-            html: '<div id="swal-map"></div>',
-            didOpen: () => {
-                // Memeriksa apakah marker sudah didefinisikan sebelumnya
-                if (!marker) {
-                    const swalMap = L.map('swal-map').setView([defaultPosition.lat, defaultPosition.lng], 13);
-                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                        attribution: '&copy; OpenStreetMap contributors'
-                    }).addTo(swalMap);
-
-                    marker = L.marker([defaultPosition.lat, defaultPosition.lng], { draggable: true }).addTo(swalMap);
-
-                    marker.on('dragend', () => {
-                        const position = marker.getLatLng();
-                        initialLat = position.lat;
-                        initialLng = position.lng;
-                    });
-                }
-            },
-            preConfirm: () => {
-                const position = marker.getLatLng();
-                initialLat = position.lat;
-                initialLng = position.lng;
-                localStorage.setItem('markerPositionLeaflet', JSON.stringify({
-                    lat: initialLat,
-                    lng: initialLng
-                }));
-                return JSON.stringify({ lat: initialLat, lng: initialLng });
-            }
-        }).then((result) => {
-            if (result.isConfirmed) {
-                const newPosition = JSON.parse(result.value);
-                initialLat = newPosition.lat;
-                initialLng = newPosition.lng;
                 Swal.fire({
                     title: 'Location Updated',
                     text: `Marker is at: lat = ${initialLat}, lng = ${initialLng}`,

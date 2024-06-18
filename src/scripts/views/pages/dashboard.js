@@ -10,7 +10,7 @@ const Dashboard = {
       <div class="text-container col-md-12">
         <h1>Website Informasi Bencana</h1>
         <h2>Pada Wilayah Kota Jakarta</h2>
-        <a href="#" class="forum-button">Forum Laporan</a>
+        <a href="#/reports" class="forum-button">Forum Laporan</a>
       </div>
       <div class="image-container col-md-12">
         <img id="img-icon-weather" alt="Weather illustration">
