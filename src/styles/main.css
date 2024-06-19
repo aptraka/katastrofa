@@ -3,6 +3,7 @@
 @import url('./weather.css');
 @import url('./news.css');
 @import url('./report.css');
+@import url('./responsive.css');
 
 html {
   scroll-behavior: smooth;
@@ -110,13 +111,13 @@ main {
 
 }
 
-.mid_content{
+/* .mid_content{
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
   margin-top: 2rem;
   padding: 2rem;
-}
+} */
 
 .mid_content h1{
   text-align: center;
@@ -136,7 +137,7 @@ main {
 .education_one{
   min-width: 600px;
   margin-right: 2rem;
-}
+} 
 
 .main_education{
   margin-top: 2rem;
@@ -176,7 +177,6 @@ main {
     display: flex;
     transition: all 0.15s ease-in;
     line-height: 1rem;
-    margin-left: 45%;
     text-decoration: none;
     margin-top: 1rem;
 }
@@ -201,6 +201,9 @@ main {
   padding: 2rem;
   border-radius: 20px;
   margin-right: 2rem;
+  align-items: center;  
+  text-align: center;
+  margin-left: 2rem;
 }
 
 .indicator_info h1{
@@ -233,6 +236,8 @@ main {
   align-items: center;
   background-color: #EAF2F9;
   border-radius: 20px;
+  margin-top: 2rem;
+  margin-right: 2rem;
 }
 
 .last_content h1{
@@ -240,7 +245,7 @@ main {
   font-size: 2.5rem;
   color: #1C2D3C;
   line-height: 3.2rem;
-  margin-top: 4rem;
+  margin-top: 0;
 }
 
 .last_content a{
@@ -259,7 +264,6 @@ main {
   display: flex;
   transition: all 0.15s ease-in;
   line-height: 1rem;
-  margin-left: 40%;
   text-decoration: none;
   margin-top: 1rem;
 }
@@ -338,7 +342,6 @@ footer img {
     display: flex;
     transition: all 0.15s ease-in;
     line-height: 1rem;
-    margin-left: 35%;
     text-decoration: none;
 }
 
