@@ -1,4 +1,65 @@
-@media screen and (min-width: 650px) {
+@media screen and (min-width: 900px) {
+  .mid_content{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 2rem;
+  padding: 2rem;
+  }
+  .main_education a{
+    margin-left: 43%;
+  }
+  .last_content a {
+    margin-left: 43%;
+  }
+  .forum-button{
+    margin-left: 33%;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .app-bar .app-bar__brand h1 {
+    font-size: 2em;
+  }
+  .weather-card{
+    margin-left: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+  }
+  .main_education a{
+    margin-left: 41%;
+  }
+  .last_content a {
+    margin-left: 41%;
+  }   
+  .forum-button{
+    margin-left: 33%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .app-bar .app-bar__brand h1 {
+    font-size: 2em;
+  }
+  .weather-card{
+    margin-left: 8rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+  }
+  .education_one{
+    margin-left: 2rem;
+    margin-top: 2rem;
+  }
+  .main_education a{
+    margin-left: 38%;
+  }
+  .last_content a {
+    margin-left: 38%;
+  }
+  .forum-button{
+    margin-left: 18%;
+  }
+}
+
+@media screen and (max-width: 650px) {
   .app-bar {
     grid-template-columns: 1fr auto;
     padding: 8px 32px;
@@ -27,68 +88,71 @@
     text-align: center;
     margin: 0;
   }
-
+  .mid_content h1 {
+    margin-top: 2rem;
+  }
+  .main_education a{
+    margin-left: 32%;
+  }
+  .last_content a {
+    margin-left: 32%;
+  }
+  .forum-button{
+    margin-left: 65%;
+  }
+  .weather-card{
+    margin-left: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+  }
 }
 
-@media screen and (min-width: 800px) {
+
+@media screen and (max-width: 500px) {
+  .app-bar {
+    grid-template-columns: 1fr auto;
+    padding: 8px 32px;
+  }
+
   .app-bar .app-bar__brand h1 {
-    font-size: 2em;
+    font-size: 1.5em;
+  }
+
+  .app-bar .app-bar__menu {
+    display: none;
+  }
+
+  .app-bar .app-bar__navigation {
+    position: static;
+    width: 100%;
+  }
+
+  .app-bar .app-bar__navigation ul li {
+    display: inline-block;
+  }
+
+  .app-bar .app-bar__navigation ul li a {
+    display: inline-block;
+    width: 120px;
+    text-align: center;
+    margin: 0;
+  }
+  .mid_content h1 {
+    margin-top: 1rem;
+  }
+  .main_education a{
+    margin-left: 32%;
+  }
+  .last_content a {
+    margin-left: 32%;
+  }
+  .forum-button{
+    margin-left: 65%;
+  }
+  .weather-card{
+    margin-left: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
   }
 }
 
-@media (max-width: 768px) {
-  .weather-card {
-      width: 80%;
-      max-width: 500px;
-  }
-
-  .weather-card .current img {
-      width: 48px;
-      height: 48px;
-  }
-
-  .weather-card .details {
-      font-size: 12px;
-  }
-}
-
-@media (max-width: 480px) {
-  .weather-card {
-      width: 95%;
-      max-width: none;
-  }
-
-  .weather-card header {
-      padding: 10px;
-  }
-
-  .weather-card .location {
-      font-size: 16px;
-  }
-
-  .weather-card .region, .weather-card .country {
-      font-size: 12px;
-  }
-
-  .weather-card .current {
-      flex-direction: column;
-      align-items: flex-start;
-  }
-
-  .weather-card .current img {
-      margin-bottom: 10px;
-  }
-
-  .weather-card .details {
-      font-size: 12px;
-  }
-
-  .weather-card .report-button {
-      padding: 10px;
-  }
-
-  .weather-card .report-button button {
-      padding: 8px 16px;
-      font-size: 14px;
-  }
-}
