@@ -85,8 +85,8 @@ header.navbar-container .nav-list li:hover a {
     font-size: 2rem;
     font-weight: 600;
     text-align: center;
-    margin-top: 0rem;
-    margin-bottom: 0rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .info_two h1 {
@@ -98,8 +98,8 @@ header.navbar-container .nav-list li:hover a {
 .info_two h1 {
     font-size: 3rem;
     margin-bottom: 1.5rem;
-    margin-top: 1.5rem;
-    line-height: 3rem;
+    margin-top: 1rem;
+    line-height: 2.5rem;
 }
 
 .info_two p{
@@ -142,13 +142,13 @@ header.navbar-container .nav-list li:hover a {
     margin-right: 1rem; 
 }
 
-.news_item .header_text {
+.news_item .header p {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    line-height: 1.2rem;
-    font-size: 1.3rem;
-    font-weight: 600;
+    line-height: 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
     margin-bottom: 0;
 }
 
@@ -165,14 +165,15 @@ header.navbar-container .nav-list li:hover a {
     margin-bottom: 0;
     margin-top: 0;
     line-height: 2.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .news_item p {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin-bottom: 0rem;
-    line-height: 2rem;
-    margin-top: 0;
     line-height: 2.5rem;
+    margin-top: 0;
+    margin-top: 1rem;
 }
 
 footer {
@@ -184,296 +185,6 @@ footer img {
     max-width: 200px; 
     max-height: 100px;
 
-}
-
-@media screen and (max-width: 500px) {
-    html, body {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        overflow-x: hidden; 
-    }
-
-    header.navbar-container {
-        flex-direction: column;
-        height: auto;
-        justify-content: center; 
-        align-items: center;
-        width: 100%;
-        padding: 0.5rem;
-    }
-    .nav-list ul {
-        padding: 0;
-        text-align: center;
-        width: 100%;
-    }
-    .nav-list li {
-        display: block;
-        margin: 10px 0;
-        width: 100%;
-    }
-    
-    header.navbar-container .logo {
-        margin-right: 0;
-        margin-bottom: 0.5rem;
-    }
-    
-    header.navbar-container .logo img {
-        width: 180px;
-        margin: 0 auto;
-    }
-    
-    header.navbar-container .nav-list ul {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.5rem;
-    }
-    
-    main {
-        grid-template-columns: 1fr;
-    }
-
-    .info_one {
-        grid-column: 1;
-    }
-
-    .info_one h1{
-        font-size: 2.3rem;
-        line-height: 2.5rem;
-        font-weight: 600;
-        text-align: center;
-    }
-
-    .info_one p{
-        font-size: 1.2rem;
-        line-height: 2rem;
-        text-align: center;
-    }
-
-    .info_two {
-        grid-row: auto;
-        margin-right: 0;
-    }
-
-    .info_two h1{
-        font-size: 2.3rem;
-        line-height: 3.2rem;
-        margin-top: 0;
-        margin-bottom: 0;
-    }
-
-    .info_two h2{
-        font-size: 1.5rem;
-        line-height: 2rem;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-    }
-
-    .info_two p{
-        font-size: 1.2rem;
-        line-height: 2rem;
-        margin-top: 0;
-        margin-bottom: 0;
-    }
-
-    .info_two img{
-        width: 100%;
-    }
-
-    #news_container {
-        grid-row: auto;
-    }
-
-    .news_item .header_text p{
-        font-size: 1.1rem;
-        margin-top: 0;
-        margin-bottom: 0;
-        line-height: 1.4rem;
-        text-align: left;
-    }
-
-    .news_item h1{
-        font-size: 1.5rem;
-        margin-top: 0;
-        margin-bottom: 0;
-        line-height: 1rem;
-        margin-top: 0;
-        margin-bottom: 0;
-        text-align: center;
-    }
-
-    .news_item p{
-        font-size: 1.2rem;
-        margin-top: 0;
-        margin-bottom: 0;
-        text-align: center;
-        margin-left: 0;
-        margin-right: 0;
-    }
-}
-
-@media screen and (max-width: 650px) {
-    .information{
-        display: flex;
-        flex-direction: column;
-    }
-
-    .info_one h1{
-        font-size:2.3rem ;
-        line-height: 2.5rem;
-        margin-top: 0;
-        margin-bottom: 0;
-        text-align: center;
-    }
-
-    .info_one p{
-        text-align: center;
-        font-size: 1.2rem;
-        line-height: 2rem;
-    }
-
-    .info_two {
-        grid-row: auto;
-        margin-right: 0;
-    }
-
-    .info_two h1{
-        font-size: 2.3rem;
-        line-height: 3.2rem;
-        margin-top: 0;
-        margin-bottom: 0;
-    }
-
-    .info_two h2{
-        font-size: 1.5rem;
-        line-height: 2rem;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-    }
-
-    .info_two p{
-        font-size: 1.2rem;
-        line-height: 2rem;
-        margin-top: 0;
-        margin-bottom: 0;
-    }
-
-    .info_two img{
-        width: 100%;
-    }
-
-    #news_container {
-        grid-row: auto; 
-    }
-
-    .news_item .header_text p{
-        font-size: 1.1rem;
-        margin-top: 0;
-        margin-bottom: 0;
-        line-height: 1.4rem;
-        text-align: left;
-    }
-
-    .news_item h1{
-        font-size: 1.5rem;
-        margin-top: 0;
-        margin-bottom: 0;
-        line-height: 1rem;
-        margin-top: 0;
-        margin-bottom: 0;
-        text-align: center;
-    }
-
-    .news_item p{
-        font-size: 1.2rem;
-        margin-top: 0;
-        margin-bottom: 0;
-        text-align: center;
-        margin-left: 0;
-        margin-right: 0;
-    }
-}
-
-@media screen and (max-width: 900px) {
-    .information{
-        display: flex;
-        flex-direction: column;
-    }
-
-    .info_one h1{
-        font-size:2.5rem ;
-        line-height: 2.5rem;
-        margin-top: 0;
-        margin-bottom: 0;
-        text-align: center;
-    }
-
-    .info_one p{
-        text-align: center;
-        font-size: 1.5rem;
-        line-height: 2rem;
-    }
-
-    .info_two {
-        grid-row: auto; /* Kembali ke pengaturan default */
-        margin-right: 0; /* Hilangkan margin kanan */
-    }
-
-    .info_two h1{
-        font-size: 2.5rem;
-        line-height: 3.2rem;
-        margin-top: 0;
-        margin-bottom: 0;
-    }
-
-    .info_two h2{
-        font-size: 1.9rem;
-        line-height: 2rem;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-    }
-
-    .info_two p{
-        font-size: 1.5rem;
-        line-height: 2rem;
-        margin-top: 0;
-        margin-bottom: 0;
-    }
-
-    .info_two img{
-        width: 100%;
-    }
-
-    #news_container {
-        grid-row: auto; /* Kembali ke pengaturan default */
-    }
-
-    .news_item .header_text p{
-        font-size: 1.5rem;
-        margin-top: 0;
-        margin-bottom: 0;
-        line-height: 1.5rem;
-        text-align: left;
-    }
-
-    .news_item h1{
-        font-size: 1.9rem;
-        margin-top: 0;
-        margin-bottom: 0;
-        line-height: 2rem;
-        margin-top: 0;
-        margin-bottom: 0;
-        text-align: center;
-    }
-
-    .news_item p{
-        font-size: 1.5rem;
-        margin-top: 0;
-        margin-bottom: 0;
-        text-align: center;
-        line-height: 2rem;
-    }
 }
 
 @media screen and (max-width: 1200px) {
@@ -604,3 +315,292 @@ footer img {
     }
 }
 
+@media screen and (max-width: 900px) {
+    .information{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .info_one h1{
+        font-size:2.5rem ;
+        line-height: 2.5rem;
+        margin-top: 0;
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    .info_one p{
+        text-align: center;
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+
+    .info_two {
+        grid-row: auto; /* Kembali ke pengaturan default */
+        margin-right: 0; /* Hilangkan margin kanan */
+    }
+
+    .info_two h1{
+        font-size: 2.5rem;
+        line-height: 3.2rem;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .info_two h2{
+        font-size: 1.9rem;
+        line-height: 2rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .info_two p{
+        font-size: 1.5rem;
+        line-height: 2rem;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .info_two img{
+        width: 100%;
+    }
+
+    #news_container {
+        grid-row: auto; /* Kembali ke pengaturan default */
+    }
+
+    .news_item .header_text p{
+        font-size: 1.5rem;
+        margin-top: 0;
+        margin-bottom: 0;
+        line-height: 1.5rem;
+        text-align: left;
+    }
+
+    .news_item h1{
+        font-size: 1.9rem;
+        margin-top: 0;
+        margin-bottom: 0;
+        line-height: 2rem;
+        margin-top: 0;
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    .news_item p{
+        font-size: 1.5rem;
+        margin-top: 0;
+        margin-bottom: 0;
+        text-align: center;
+        line-height: 2rem;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .information{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .info_one h1{
+        font-size:2.3rem ;
+        line-height: 2.5rem;
+        margin-top: 0;
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    .info_one p{
+        text-align: center;
+        font-size: 1.2rem;
+        line-height: 2rem;
+    }
+
+    .info_two {
+        grid-row: auto;
+        margin-right: 0;
+    }
+
+    .info_two h1{
+        font-size: 2.3rem;
+        line-height: 3.2rem;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .info_two h2{
+        font-size: 1.5rem;
+        line-height: 2rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .info_two p{
+        font-size: 1.2rem;
+        line-height: 2rem;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .info_two img{
+        width: 100%;
+    }
+
+    #news_container {
+        grid-row: auto; 
+    }
+
+    .news_item .header_text p{
+        font-size: 1.1rem;
+        margin-top: 0;
+        margin-bottom: 0;
+        line-height: 1.4rem;
+        text-align: left;
+    }
+
+    .news_item h1{
+        font-size: 1.5rem;
+        margin-top: 0;
+        margin-bottom: 0;
+        line-height: 1rem;
+        margin-top: 0;
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    .news_item p{
+        font-size: 1.2rem;
+        margin-top: 0;
+        margin-bottom: 0;
+        text-align: center;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        overflow-x: hidden; 
+    }
+
+    header.navbar-container {
+        flex-direction: column;
+        height: auto;
+        justify-content: center; 
+        align-items: center;
+        width: 100%;
+        padding: 0.5rem;
+    }
+    .nav-list ul {
+        padding: 0;
+        text-align: center;
+        width: 100%;
+    }
+    .nav-list li {
+        display: block;
+        margin: 10px 0;
+        width: 100%;
+    }
+    
+    header.navbar-container .logo {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+    
+    header.navbar-container .logo img {
+        width: 180px;
+        margin: 0 auto;
+    }
+    
+    header.navbar-container .nav-list ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    .info_one {
+        grid-column: 1;
+    }
+
+    .info_one h1{
+        font-size: 2.3rem;
+        line-height: 2.5rem;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    .info_one p{
+        font-size: 1.2rem;
+        line-height: 2rem;
+        text-align: center;
+    }
+
+    .info_two {
+        grid-row: auto;
+        margin-right: 0;
+    }
+
+    .info_two h1{
+        font-size: 2.3rem;
+        line-height: 3.2rem;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .info_two h2{
+        font-size: 1.5rem;
+        line-height: 2rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .info_two p{
+        font-size: 1.2rem;
+        line-height: 2rem;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .info_two img{
+        width: 100%;
+    }
+
+    #news_container {
+        grid-row: auto;
+    }
+
+    .news_item .header_text p{
+        font-size: 1.1rem;
+        margin-top: 0;
+        margin-bottom: 0;
+        line-height: 1.4rem;
+        text-align: left;
+    }
+
+    .news_item h1{
+        font-size: 1.5rem;
+        margin-top: 0;
+        margin-bottom: 0;
+        line-height: 1rem;
+        margin-top: 0;
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    .news_item p{
+        font-size: 1.2rem;
+        margin-top: 0;
+        margin-bottom: 0;
+        text-align: center;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
